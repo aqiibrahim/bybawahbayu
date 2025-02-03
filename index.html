@@ -217,12 +217,15 @@
             particles.interactivity.status = "mouseleave";
         });
 
-        // Initialize ScrollReveal
+        // Initialize ScrollReveal with improved settings
         ScrollReveal().reveal('.section', {
             origin: 'bottom',
-            distance: '50px',
-            duration: 1000,
-            reset: true,
+            distance: '60px',
+            duration: 1800, // Smoother and slightly slower effect
+            easing: 'ease-out',
+            reset: false, // Prevents elements from hiding again after scrolling back
+            viewFactor: 0.2, // Elements appear when 20% visible
+            mobile: true, // Ensures it works on mobile too
         });
     
         ScrollReveal().reveal('[data-sr]', {
