@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByBawahBayu</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="parallax header-full-page">
+        <div id="particles-js"></div> <!-- Particles.js container -->
+        <div class="header-content">
+            <div class="top-left">
+                <img src="assets/bybawahbayu.png" alt="ByBawahBayu Text" class="brand-text">
+            </div>
+            <div class="top-right">
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#work">WORK</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="center-logo">
+                <img src="assets/logo.png" id="logo" alt="Logo" class="logo">
+            </div>
+            <div class="instructions">
+                <p class="header-subtitle">Click Anywhere You Like</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <div class="text-and-shape">
+                <img src="assets/words-and-shape.png" alt="Words and Decorative Shape" class="words-shape">
+            </div>
+            <div class="carousel">
+                <img src="assets/carousel1.png" alt="Carousel Image 1" class="carousel-image">
+                <img src="assets/carousel2.png" alt="Carousel Image 2" class="carousel-image">
+                <img src="assets/carousel3.png" alt="Carousel Image 3" class="carousel-image">
+                <img src="assets/carousel4.png" alt="Carousel Image 4" class="carousel-image">
+                <img src="assets/carousel5.png" alt="Carousel Image 5" class="carousel-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="about-container">
+            <!-- Profile Image -->
+            <div class="about-image">
+                <img src="assets/profile-image.jpg" alt="Profile">
+            </div>
+
+            <!-- About Text & Tabs -->
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    Welcome to ByBawahBayu - a creative journey dedicated to capturing timeless moments through the lens of artistry and passion.
+                </p>
+
+                <!-- Tabs Navigation -->
+                <div class="about-tabs">
+                    <button class="tab-btn active" data-tab="skills">Skills</button>
+                    <button class="tab-btn" data-tab="experience">Experience</button>
+                    <button class="tab-btn" data-tab="education">Education</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content active" id="skills">
+                    <ul>
+                        <li>Photography</li>
+                        <li>Photo Editing</li>
+                        <li>Graphic Design</li>
+                        <li>Creative Direction</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="experience">
+                    <ul>
+                        <li><strong>2021 - Current:</strong> Freelance Photographer</li>
+                        <li><strong>2019 - 2021:</strong> Lead Photographer at XYZ Studio</li>
+                        <li><strong>2017 - 2019:</strong> Assistant Photographer at ABC Agency</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="education">
+                    <ul>
+                        <li><strong>2016 - 2020:</strong> Bachelor's in Photography & Visual Arts</li>
+                        <li><strong>2015 - 2016:</strong> Diploma in Digital Media</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="section">
+        <h2>Work</h2>
+        <div class="gallery" id="gallery">
+            <!-- Images will be added dynamically using JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p>I'd love to hear from you! Whether it's a collaboration, project inquiry, or just to say hello, feel free to reach out.</p>
+    
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <form class="contact-form" action="mailto:bybawahbayu@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+    
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:bybawahbayu@gmail.com">bybawahbayu@gmail.com</a></p>
+                    <!-- Social Media Links -->
+                    <ul class="social-icons">
+                        <li><a href="https://www.instagram.com/bybawahbayu?igsh=MWs1M25saDZjNmo2OA%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@bybawahbayu?_t=ZS-8tazmiB11UN&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+                    </ul>
+                    <p style="margin-top: 20px;"><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ByBawahBayu. All rights reserved.</p>
+    </footer>
+
+    <!-- Include JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Initialize Particles.js with cursor-following interaction
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#00ffcc" },
+                shape: {
+                    type: "circle",
+                    stroke: { width: 0, color: "#000000" },
+                    polygon: { nb_sides: 5 },
+                },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00ffcc",
+                    opacity: 0.4,
+                    width: 1,
+                },
+                move: {
+                    enable: true,
+                    speed: 3, // Adjust speed for smoother effect
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                },
+            },
+            interactivity: {
+                detect_on: "window", // Detects mouse movement anywhere on screen
+                events: {
+                    onhover: { enable: false }, // Disable default hover repulsion
+                    onclick: { enable: true, mode: "push" },
+                    resize: true,
+                },
+                modes: {
+                    grab: { distance: 200, line_linked: { opacity: 1 } },
+                    bubble: { distance: 200, size: 4, duration: 2, opacity: 0.8 },
+                    repulse: { distance: 200, duration: 0.4 }, // Forces particles to move toward the cursor
+                    push: { particles_nb: 4 },
+                    remove: { particles_nb: 2 },
+                },
+            },
+            retina_detect: true,
+        });
+
+        // Track mouse movement and apply repulse effect
+        document.addEventListener("mousemove", function (event) {
+            const particles = window.pJSDom[0].pJS;
+            if (!particles) return;
+
+            particles.interactivity.mouse.pos_x = event.clientX;
+            particles.interactivity.mouse.pos_y = event.clientY;
+            particles.interactivity.status = "mousemove"; // Ensure interactivity is active
+        });
+
+        // Reset particles when mouse leaves
+        document.addEventListener("mouseleave", function () {
+            const particles = window.pJSDom[0].pJS;
+            if (!particles) return;
+
+            particles.interactivity.mouse.pos_x = null;
+            particles.interactivity.mouse.pos_y = null;
+            particles.interactivity.status = "mouseleave";
+        });
+
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.section', {
+            origin: 'bottom',
+            distance: '50px',
+            duration: 1000,
+            reset: true,
+        });
+    
+        ScrollReveal().reveal('[data-sr]', {
+            origin: 'left',
+            distance: '100px',
+            duration: 1200,
+            reset: true,
+        });
+    
+        // 🔹 Smooth Scroll for Navigation Links
+        document.querySelectorAll('.navigation a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+    
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Adjust offset if needed
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Automatically load images into the Work section
+        document.addEventListener("DOMContentLoaded", function () {
+            const gallery = document.getElementById("gallery");
+    
+            // Number of images to load
+            const imageCount = 13;
+            const imageFormat = "png";
+    
+            for (let i = 1; i <= imageCount; i++) {
+                const imgWrapper = document.createElement("div");
+                imgWrapper.classList.add("gallery-item");
+    
+                const imgElement = document.createElement("img");
+                imgElement.src = `assets/work${i}.${imageFormat}`;
+                imgElement.alt = `Work Image ${i}`;
+                imgElement.setAttribute("data-sr", "");
+    
+                // Tilt & Zoom Effect on Hover
+                imgElement.addEventListener('mouseover', () => {
+                    imgElement.style.transform = 'scale(1.1) rotate(2deg)';
+                    imgElement.style.boxShadow = '0px 5px 15px rgba(0, 255, 204, 0.5)';
+                });
+    
+                imgElement.addEventListener('mouseleave', () => {
+                    imgElement.style.transform = 'scale(1)';
+                    imgElement.style.boxShadow = 'none';
+                });
+    
+                imgWrapper.appendChild(imgElement);
+                gallery.appendChild(imgWrapper);
+            }
+        });
+
+        // Tab Switching for About Section
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    // Hide all tab contents
+                    tabContents.forEach(content => content.classList.remove("active"));
+
+                    // Add active class to the clicked button
+                    this.classList.add("active");
+                    // Show the corresponding tab content
+                    const targetTab = this.getAttribute("data-tab");
+                    document.getElementById(targetTab).classList.add("active");
+                });
+            });
+        });
+    </script>    
+</body>
+</html>
