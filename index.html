@@ -217,15 +217,25 @@
             particles.interactivity.status = "mouseleave";
         });
 
-        // Initialize ScrollReveal with improved settings
+        // Initialize ScrollReveal with optimized settings
         ScrollReveal().reveal('.section', {
             origin: 'bottom',
             distance: '60px',
-            duration: 1800, // Smoother and slightly slower effect
+            duration: 1500, // Smooth reveal effect
             easing: 'ease-out',
-            reset: true, // Prevents elements from hiding again after scrolling back
-            viewFactor: 0.2, // Elements appear when 20% visible
-            mobile: true, // Ensures it works on mobile too
+            reset: false, // Prevents elements from hiding again
+            viewFactor: 0.3, // Trigger animation when 30% of element is visible
+            mobile: true, // Works on mobile too
+        });
+
+        // Fix for elements disappearing when scrolling up
+        document.addEventListener("scroll", function () {
+            document.querySelectorAll(".section").forEach((section) => {
+                if (section.getBoundingClientRect().top < window.innerHeight * 0.75) {
+                    section.style.opacity = "1";
+                    section.style.transform = "translateY(0)";
+                }
+            });
         });
     
         ScrollReveal().reveal('[data-sr]', {
