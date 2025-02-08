@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header class="parallax header-full-page">
+    <header class="parallax header-full-page" data-sr>
         <div id="particles-js"></div> <!-- Particles.js container -->
         <div class="header-content">
             <div class="top-left">
@@ -38,7 +38,7 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home-section">
+    <section id="home" class="home-section" data-sr>
         <div class="home-content">
             <div class="text-and-shape">
                 <img src="assets/words-and-shape.png" alt="Words and Decorative Shape" class="words-shape">
@@ -54,7 +54,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about">
+    <section id="about" class="section about" data-sr>
         <div class="about-container">
             <!-- Profile Image -->
             <div class="about-image">
@@ -103,8 +103,8 @@
         </div>
     </section>
 
-    <!-- Work Section -->
-    <section id="work" class="section">
+    <!-- Work Section (UNCHANGED) -->
+    <section id="work" class="section" data-sr>
         <h2>Work</h2>
         <div class="gallery" id="gallery">
             <!-- Images will be added dynamically using JavaScript -->
@@ -150,7 +150,16 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        // Initialize Particles.js with cursor-following interaction
+        // Initialize ScrollReveal for scrolling animations
+        ScrollReveal().reveal('[data-sr]', {
+            duration: 1200, 
+            distance: '60px',
+            easing: 'ease-in-out',
+            origin: 'bottom',
+            reset: true // Allows animations to replay when scrolling up
+        });
+
+        // Initialize Particles.js
         particlesJS("particles-js", {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -171,7 +180,7 @@
                 },
                 move: {
                     enable: true,
-                    speed: 3, // Adjust speed for smoother effect
+                    speed: 3, 
                     direction: "none",
                     random: false,
                     straight: false,
@@ -180,16 +189,12 @@
                 },
             },
             interactivity: {
-                detect_on: "window", // Detects mouse movement anywhere on screen
+                detect_on: "window",
                 events: {
-                    onhover: { enable: false }, // Disable default hover repulsion
                     onclick: { enable: true, mode: "push" },
                     resize: true,
                 },
                 modes: {
-                    grab: { distance: 200, line_linked: { opacity: 1 } },
-                    bubble: { distance: 200, size: 4, duration: 2, opacity: 0.8 },
-                    repulse: { distance: 200, duration: 0.4 }, // Forces particles to move toward the cursor
                     push: { particles_nb: 4 },
                     remove: { particles_nb: 2 },
                 },
@@ -197,68 +202,6 @@
             retina_detect: true,
         });
 
-        // Track mouse movement and apply repulse effect
-        document.addEventListener("mousemove", function (event) {
-            const particles = window.pJSDom[0].pJS;
-            if (!particles) return;
-
-            particles.interactivity.mouse.pos_x = event.clientX;
-            particles.interactivity.mouse.pos_y = event.clientY;
-            particles.interactivity.status = "mousemove"; // Ensure interactivity is active
-        });
-
-        // Reset particles when mouse leaves
-        document.addEventListener("mouseleave", function () {
-            const particles = window.pJSDom[0].pJS;
-            if (!particles) return;
-
-            particles.interactivity.mouse.pos_x = null;
-            particles.interactivity.mouse.pos_y = null;
-            particles.interactivity.status = "mouseleave";
-        });
-
-        // Initialize ScrollReveal with optimized settings
-        ScrollReveal().reveal('.section', {
-            origin: 'bottom',
-            distance: '60px',
-            duration: 1500, // Smooth reveal effect
-            easing: 'ease-out',
-            reset: false, // Prevents elements from hiding again
-            viewFactor: 0.3, // Trigger animation when 30% of element is visible
-            mobile: true, // Works on mobile too
-        });
-
-        // Fix for elements disappearing when scrolling up
-        document.addEventListener("scroll", function () {
-            document.querySelectorAll(".section").forEach((section) => {
-                if (section.getBoundingClientRect().top < window.innerHeight * 0.75) {
-                    section.style.opacity = "1";
-                    section.style.transform = "translateY(0)";
-                }
-            });
-        });
-    
-        ScrollReveal().reveal('[data-sr]', {
-            origin: 'left',
-            distance: '100px',
-            duration: 1200,
-            reset: true,
-        });
-    
-        // 🔹 Smooth Scroll for Navigation Links
-        document.querySelectorAll('.navigation a').forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-    
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50, // Adjust offset if needed
-                    behavior: 'smooth'
-                });
-            });
-        });
-    
         // Automatically load images into the Work section
         document.addEventListener("DOMContentLoaded", function () {
             const gallery = document.getElementById("gallery");
@@ -291,27 +234,6 @@
                 gallery.appendChild(imgWrapper);
             }
         });
-
-        // Tab Switching for About Section
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabButtons = document.querySelectorAll(".tab-btn");
-            const tabContents = document.querySelectorAll(".tab-content");
-
-            tabButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    // Remove active class from all buttons
-                    tabButtons.forEach(btn => btn.classList.remove("active"));
-                    // Hide all tab contents
-                    tabContents.forEach(content => content.classList.remove("active"));
-
-                    // Add active class to the clicked button
-                    this.classList.add("active");
-                    // Show the corresponding tab content
-                    const targetTab = this.getAttribute("data-tab");
-                    document.getElementById(targetTab).classList.add("active");
-                });
-            });
-        });
-    </script>    
+    </script>
 </body>
 </html>
